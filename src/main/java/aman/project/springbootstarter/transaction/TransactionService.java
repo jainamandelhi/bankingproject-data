@@ -1,11 +1,14 @@
 package aman.project.springbootstarter.transaction;
 
-import aman.project.springbootstarter.user.User;
+import aman.project.springbootstarter.account.Account;
+import aman.project.springbootstarter.account.AccountRepository;
+import aman.project.springbootstarter.account.AccountService;
+import aman.project.springbootstarter.user.UserRepository;
 import aman.project.springbootstarter.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+import javax.transaction.Transactional;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -17,62 +20,72 @@ public class TransactionService {
     private TransactionRepository transactionRepository;
 
     @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
     private UserService users;
+    
+    @Autowired
+    private AccountService accounts;
+    
+    @Autowired
+    private AccountRepository accountRepository;
 
-    private double sender_balance = -1;
-    private double receiver_balance = -1;
-
-
-    private List<Transaction> transactions = new ArrayList<>(Arrays.asList(
+    /*private List<Transaction> transactions = new ArrayList<>(Arrays.asList(
             new Transaction("ID1", "100", "101", 123),
             new Transaction("ID2", "101", "100", 385)
-    ));
+    ));*/
 
     public List<Transaction> getAllTransactions() {
         List<Transaction> users = (List<Transaction>) transactionRepository.findAll();
         return users;
         //return transactions;
     }
-
-    public Optional<Transaction> getTransaction(String id) {
+    public Optional<Transaction> getTransaction(Integer id) {
         return transactionRepository.findById(id);
     }
 
-    public void addTransaction(Transaction transaction) {
-        String sender = transaction.getSender();
-        String receiver = transaction.getReceiver();
-        double amount = transaction.getAmount();
-        List<User> user = users.getAllUsers();
-        for (int i = 0; i < user.size(); i++) {
-            String UserT = user.get(i).getId();
-            if (sender.equals(UserT)) {
-                sender_balance = user.get(i).getBalance();
-            }
-            if (receiver.equals(UserT)) {
-                receiver_balance = user.get(i).getBalance();
-            }
+    @Transactional
+    public TransactionResponse addTransaction(TransactionRequest transactionRequest) {
+        Integer senderId = transactionRequest.getSenderId();
+        Integer receiverId = transactionRequest.getReceiverId();
+        double amount = transactionRequest.getAmount();
+        String failureReason = null;
+        Account senderAccount = accounts.getAccount(senderId).get();
+        Account receiverAccount = accounts.getAccount(receiverId).get();
+        TransactionType transactionType;
+        transactionType = TransactionType.DEBIT;
+        if(senderAccount.getBalance() < amount) {
+            failureReason = "Insufficient Balance";
         }
-        if (sender_balance != -1 && receiver_balance != -1 && amount <= sender_balance) {
-            for (int i = 0; i < user.size(); i++) {
-                String UserT = user.get(i).getId();
-                if (sender == UserT) {
-                    user.get(i).setBalance(sender_balance - amount);
-                }
-                if (receiver == UserT) {
-                    user.get(i).setBalance(receiver_balance + amount);
-                }
-            }
-            transactionRepository.save(transaction);
-            // do transaction
-        } else {
-
-            // abort
+        else
+        {
+            senderAccount.setBalance(senderAccount.getBalance() - amount);
+            receiverAccount.setBalance(receiverAccount.getBalance() + amount);
+            accountRepository.saveAll(Arrays.asList(senderAccount, receiverAccount));
         }
+        Transaction transaction = new Transaction();
+        transaction.setSenderAccount(senderAccount);
+        transaction.setReceiverAccount(receiverAccount);
+        transaction.setAmount(amount);
+        transaction.setTransactionType(TransactionType.DEBIT);
+        transactionRepository.save(transaction);
+        TransactionResponse transactionResponse = TransactionResponse.builder().account2(receiverId).account1(senderId).id(transaction.getId()).transactionType(transactionType).failureReason(failureReason).amount(amount).transactionType(TransactionType.DEBIT).build();
+        return transactionResponse;
     }
 
 
-    public void deleteTransaction(String id) {
+    public void deleteTransaction(Integer id)
+    {
         transactionRepository.deleteById(id);
     }
 
+    public List<Transaction> getTransactionsByAccountId(Integer id) {
+        return transactionRepository.getTransactionsByAccountId(id);
+    }
+
+    /*public List<Transaction> findTransactionsByAccountId(Integer id)
+    {
+        return transactionRepository.findTransactionsByAccountId(id);
+    }*/
 }

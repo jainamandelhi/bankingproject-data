@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,14 +20,17 @@ public class UserController {
 	
 	@RequestMapping("/users")
 	public List<User> getAllUsers() {
+
 		return userService.getAllUsers();
 	}
 	
 	@RequestMapping("/users/{id}")
-	public Optional<User> getUser(@PathVariable String id)
+	public Optional<User> getUser(@PathVariable Integer id)
 	{
+
 		return userService.getUser(id);
 	}
+
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/users")
 	public void addUser(@RequestBody User user) {
@@ -34,12 +38,12 @@ public class UserController {
 	}
 	
 	@RequestMapping(method = RequestMethod.PUT, value = "/users/{id}")
-	public void updateUser(@RequestBody User user, @PathVariable String id) {
+	public void updateUser(@RequestBody User user, @PathVariable Integer id) {
 		userService.updateUser(id, user); 
 	}
 	
 	@RequestMapping(method = RequestMethod.DELETE, value = "/users/{id}")
-	public void deleteUser(@PathVariable String id) {
+	public void deleteUser(@PathVariable Integer id) {
 		userService.deleteUser(id); 
 	}
 }
