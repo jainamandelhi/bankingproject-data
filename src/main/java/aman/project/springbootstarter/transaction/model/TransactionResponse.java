@@ -1,5 +1,4 @@
-package aman.project.springbootstarter.transaction;
-
+package aman.project.springbootstarter.transaction.model;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,10 +8,11 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class TransactionRequest {
+public class TransactionResponse {
     private Integer id;
-    private Integer senderId;
-    private Integer receiverId;
-    private double amount;
+    String failureReason;
+    private Double amount;
     private TransactionType transactionType;
+    private Integer account1;
+    private Integer account2;
 }

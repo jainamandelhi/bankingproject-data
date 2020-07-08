@@ -1,8 +1,7 @@
-package aman.project.springbootstarter.user;
+package aman.project.springbootstarter.user.model;
 
-import aman.project.springbootstarter.account.Account;
-import aman.project.springbootstarter.transaction.Transaction;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import aman.project.springbootstarter.account.model.Account;
+import aman.project.springbootstarter.transaction.model.TransactionType;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,8 +9,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Data
@@ -25,11 +22,15 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String username;
+	private String mobileNo;
+	private String address;
+	@Enumerated(EnumType.STRING)
+	@Column
+	private IdentityType identityType;
 	private Integer age;
-	//@Temporal(TemporalType.DATE)
-	//private Date date;
+
 	@OneToMany(
-			mappedBy = "owner", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+			mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JsonManagedReference
 	private List<Account> accountUser;
 }

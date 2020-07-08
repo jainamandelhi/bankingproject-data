@@ -1,8 +1,7 @@
-package aman.project.springbootstarter.account;
-import aman.project.springbootstarter.transaction.Transaction;
-import aman.project.springbootstarter.user.User;
+package aman.project.springbootstarter.account.model;
+import aman.project.springbootstarter.transaction.model.Transaction;
+import aman.project.springbootstarter.user.model.User;
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -36,7 +35,7 @@ public class Account {
     private List<Transaction> creditTransactions;
 
     @ManyToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name = "owner_id", nullable = false)
+    @JoinColumn(name = "user_id", nullable = false)
     @JsonBackReference
-    private User owner;
+    private User user;
 }

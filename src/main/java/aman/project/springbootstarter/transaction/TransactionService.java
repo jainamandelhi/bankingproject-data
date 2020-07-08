@@ -1,17 +1,18 @@
 package aman.project.springbootstarter.transaction;
 
-import aman.project.springbootstarter.account.Account;
+import aman.project.springbootstarter.account.model.Account;
 import aman.project.springbootstarter.account.AccountRepository;
 import aman.project.springbootstarter.account.AccountService;
+import aman.project.springbootstarter.transaction.model.*;
 import aman.project.springbootstarter.user.UserRepository;
 import aman.project.springbootstarter.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class TransactionService {
@@ -31,28 +32,35 @@ public class TransactionService {
     @Autowired
     private AccountRepository accountRepository;
 
-    /*private List<Transaction> transactions = new ArrayList<>(Arrays.asList(
-            new Transaction("ID1", "100", "101", 123),
-            new Transaction("ID2", "101", "100", 385)
-    ));*/
+    @Autowired
+    private TransactionHelper transactionHelper;
 
-    public List<Transaction> getAllTransactions() {
-        List<Transaction> users = (List<Transaction>) transactionRepository.findAll();
-        return users;
-        //return transactions;
+    public List<TransactionResponseView> getAllTransactions() {
+        List<Transaction> transactionList = transactionRepository.findAll();
+        List<TransactionResponseView>transactionResponseViewList = new ArrayList<>();
+        for(Transaction transaction: transactionList)
+        {
+            TransactionResponseView transactionResponseView = new TransactionResponseView();
+            transactionResponseView = transactionHelper.convertTransactionResponse(transaction);
+            transactionResponseViewList.add(transactionResponseView);
+        }
+        return transactionResponseViewList;
     }
-    public Optional<Transaction> getTransaction(Integer id) {
-        return transactionRepository.findById(id);
+    public TransactionResponseView getTransaction(Integer id) {
+        Transaction transaction = transactionRepository.findById(id).get();
+        TransactionResponseView transactionResponseView = new TransactionResponseView();
+        transactionResponseView = transactionHelper.convertTransactionResponse(transaction);
+        return transactionResponseView;
     }
 
     @Transactional
     public TransactionResponse addTransaction(TransactionRequest transactionRequest) {
-        Integer senderId = transactionRequest.getSenderId();
-        Integer receiverId = transactionRequest.getReceiverId();
+        Integer senderAccountId = transactionRequest.getSenderAccount();
+        Integer receiverAccountId = transactionRequest.getReceiverAccount();
         double amount = transactionRequest.getAmount();
         String failureReason = null;
-        Account senderAccount = accounts.getAccount(senderId).get();
-        Account receiverAccount = accounts.getAccount(receiverId).get();
+        Account senderAccount = accountRepository.findById(senderAccountId).get();
+        Account receiverAccount = accountRepository.findById(receiverAccountId).get();
         TransactionType transactionType;
         transactionType = TransactionType.DEBIT;
         if(senderAccount.getBalance() < amount) {
@@ -70,7 +78,7 @@ public class TransactionService {
         transaction.setAmount(amount);
         transaction.setTransactionType(TransactionType.DEBIT);
         transactionRepository.save(transaction);
-        TransactionResponse transactionResponse = TransactionResponse.builder().account2(receiverId).account1(senderId).id(transaction.getId()).transactionType(transactionType).failureReason(failureReason).amount(amount).transactionType(TransactionType.DEBIT).build();
+        TransactionResponse transactionResponse = TransactionResponse.builder().account2(receiverAccountId).account1(senderAccountId).id(transaction.getId()).transactionType(transactionType).failureReason(failureReason).amount(amount).transactionType(TransactionType.DEBIT).build();
         return transactionResponse;
     }
 
@@ -79,13 +87,4 @@ public class TransactionService {
     {
         transactionRepository.deleteById(id);
     }
-
-    public List<Transaction> getTransactionsByAccountId(Integer id) {
-        return transactionRepository.getTransactionsByAccountId(id);
-    }
-
-    /*public List<Transaction> findTransactionsByAccountId(Integer id)
-    {
-        return transactionRepository.findTransactionsByAccountId(id);
-    }*/
 }

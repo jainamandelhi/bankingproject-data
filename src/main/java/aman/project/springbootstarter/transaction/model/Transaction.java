@@ -1,15 +1,14 @@
-package aman.project.springbootstarter.transaction;
+package aman.project.springbootstarter.transaction.model;
 
-import aman.project.springbootstarter.account.Account;
-import aman.project.springbootstarter.user.User;
+import aman.project.springbootstarter.account.model.Account;
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Data
 @Builder
@@ -22,12 +21,12 @@ public class Transaction {
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
     private Double amount;
+    @Temporal(TemporalType.DATE)
+    private Date date;
 
     @Enumerated(EnumType.STRING)
+    @Column
     private TransactionType transactionType;
-    //private Status status;
-    //public enum Status {PASSED, FAILED};
-    // time
 
     @ManyToOne(cascade=CascadeType.ALL)
     @JoinColumn(name = "sender_id", nullable = false)
