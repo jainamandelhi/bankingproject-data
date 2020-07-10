@@ -13,6 +13,9 @@ public class UserHelper {
         userRequest.setAge(user.getAge());
         userRequest.setUsername(user.getUsername());
         userRequest.setId(user.getId());
+        userRequest.setAddress(user.getAddress());
+        userRequest.setMobileNo(user.getMobileNo());
+        userRequest.setIdentityType(user.getIdentityType());
         return userRequest;
     }
     public UserResponse convertUserResponse(User user)
@@ -21,6 +24,9 @@ public class UserHelper {
         userResponse.setAge(user.getAge());
         userResponse.setUsername(user.getUsername());
         userResponse.setId(user.getId());
+        userResponse.setAddress(user.getAddress());
+        userResponse.setMobileNo(user.getMobileNo());
+        userResponse.setIdentityType(user.getIdentityType());
         return userResponse;
     }
 }

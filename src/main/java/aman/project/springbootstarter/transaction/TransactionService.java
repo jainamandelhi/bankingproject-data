@@ -1,5 +1,4 @@
 package aman.project.springbootstarter.transaction;
-
 import aman.project.springbootstarter.account.model.Account;
 import aman.project.springbootstarter.account.AccountRepository;
 import aman.project.springbootstarter.account.AccountService;
@@ -7,12 +6,16 @@ import aman.project.springbootstarter.transaction.model.*;
 import aman.project.springbootstarter.user.UserRepository;
 import aman.project.springbootstarter.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Lock;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import static javax.persistence.LockModeType.PESSIMISTIC_READ;
+import static javax.persistence.LockModeType.PESSIMISTIC_WRITE;
 
 @Service
 public class TransactionService {
@@ -35,6 +38,7 @@ public class TransactionService {
     @Autowired
     private TransactionHelper transactionHelper;
 
+    @Lock(PESSIMISTIC_READ)
     public List<TransactionResponseView> getAllTransactions() {
         List<Transaction> transactionList = transactionRepository.findAll();
         List<TransactionResponseView>transactionResponseViewList = new ArrayList<>();
@@ -46,6 +50,7 @@ public class TransactionService {
         }
         return transactionResponseViewList;
     }
+    @Lock(PESSIMISTIC_READ)
     public TransactionResponseView getTransaction(Integer id) {
         Transaction transaction = transactionRepository.findById(id).get();
         TransactionResponseView transactionResponseView = new TransactionResponseView();
@@ -54,12 +59,20 @@ public class TransactionService {
     }
 
     @Transactional
+    @Lock(PESSIMISTIC_WRITE)
     public TransactionResponse addTransaction(TransactionRequest transactionRequest) {
         Integer senderAccountId = transactionRequest.getSenderAccount();
         Integer receiverAccountId = transactionRequest.getReceiverAccount();
         double amount = transactionRequest.getAmount();
         String failureReason = null;
-        Account senderAccount = accountRepository.findById(senderAccountId).get();
+        Account senderAccount = new Account();
+        //Account receiverAccount = new Account();
+        //try {
+            senderAccount = accountRepository.findById(senderAccountId).get();
+        //}
+        //catch{
+
+       // }
         Account receiverAccount = accountRepository.findById(receiverAccountId).get();
         TransactionType transactionType;
         transactionType = TransactionType.DEBIT;
@@ -81,8 +94,7 @@ public class TransactionService {
         TransactionResponse transactionResponse = TransactionResponse.builder().account2(receiverAccountId).account1(senderAccountId).id(transaction.getId()).transactionType(transactionType).failureReason(failureReason).amount(amount).transactionType(TransactionType.DEBIT).build();
         return transactionResponse;
     }
-
-
+    @Lock(PESSIMISTIC_WRITE)
     public void deleteTransaction(Integer id)
     {
         transactionRepository.deleteById(id);
