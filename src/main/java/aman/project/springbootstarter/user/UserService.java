@@ -6,7 +6,6 @@ import aman.project.springbootstarter.user.model.User;
 import aman.project.springbootstarter.user.model.UserAccounts;
 import aman.project.springbootstarter.user.model.UserRequest;
 import aman.project.springbootstarter.user.model.UserResponse;
-import org.apache.logging.log4j.LogManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
