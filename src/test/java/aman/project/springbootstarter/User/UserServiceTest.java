@@ -4,7 +4,7 @@ import aman.project.springbootstarter.user.UserRepository;
 import aman.project.springbootstarter.user.UserService;
 import aman.project.springbootstarter.user.model.IdentityType;
 import aman.project.springbootstarter.user.model.User;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
