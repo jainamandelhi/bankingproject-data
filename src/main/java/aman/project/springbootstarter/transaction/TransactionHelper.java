@@ -13,7 +13,7 @@ public class TransactionHelper {
         TransactionRequest transactionRequest = new TransactionRequest();
         transactionRequest.setAmount(transaction.getAmount());
         transactionRequest.setDate(transaction.getDate());
-        transactionRequest.setId(transaction.getId());
+        //transactionRequest.setId(transaction.getId());
         transactionRequest.setReceiverAccount(transaction.getReceiverAccount().getId());
         transactionRequest.setSenderAccount(transaction.getSenderAccount().getId());
         transactionRequest.setTransactionType(transaction.getTransactionType());

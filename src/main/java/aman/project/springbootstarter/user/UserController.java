@@ -5,6 +5,7 @@ import java.util.NoSuchElementException;
 import aman.project.springbootstarter.user.model.UserAccounts;
 import aman.project.springbootstarter.user.model.UserRequest;
 import aman.project.springbootstarter.user.model.UserResponse;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
+@RequestMapping("/api")
 public class UserController {
 	
 	@Autowired
@@ -23,43 +25,54 @@ public class UserController {
 
 	private static final Logger logger = LoggerFactory.getLogger(UserService.class);
 
-	@RequestMapping("/users")
-	public List<UserResponse> getAllUsers()
-	{
+	@RequestMapping(method = RequestMethod.GET, value = "/users")
+	@ApiOperation(value = "Get users",
+				  notes = "Hit the api to get the list of all the users")
+	public List<UserResponse> getAllUsers() throws Exception {
 		return userService.getAllUsers();
 	}
-	
-	@RequestMapping("/users/{id}")
+
+
+	@RequestMapping(method = RequestMethod.GET, value = "/users/{id}")
+	@ApiOperation(value = "Get user by id",
+			notes = "Provide user id to get information about the user")
 	public UserResponse getUser(@PathVariable Integer id)
 	{
-		UserResponse userResponse = new UserResponse();
-		try {
-			userResponse = userService.getUser(id);
-		}
-		catch(NoSuchElementException e) {
-			logger.info("No such user exists");
-		}
-		return userResponse;
+		return userService.getUser(id);
 	}
+
+
 	@RequestMapping(method = RequestMethod.POST, value = "/users")
-	public void addUser(@RequestBody UserRequest userRequest)
-	{
+	@ApiOperation(value = "Add user",
+			notes = "Add details of the user")
+	public void addUser(@RequestBody UserRequest userRequest) throws Exception {
 		userService.addUser(userRequest);
 	}
-	
+
+
+
 	@RequestMapping(method = RequestMethod.PUT, value = "/users/{id}")
+	@ApiOperation(value = "Update user",
+			notes = "Provide user id to update the information about the user")
 	public void updateUser(@RequestBody UserRequest userRequest, @PathVariable Integer id) {
 
 		userService.updateUser(id, userRequest);
 	}
-	
+
+
 	@RequestMapping(method = RequestMethod.DELETE, value = "/users/{id}")
+	@ApiOperation(value = "Delete user",
+			notes = "Provide user id to delete the user")
 	public void deleteUser(@PathVariable Integer id) {
 		userService.deleteUser(id);
 	}
 
-	@RequestMapping("/users/{id}/account")
-	public List<UserAccounts> findAccountsByUserId(@PathVariable Integer id) {
+
+
+	@RequestMapping(method = RequestMethod.GET, value = "/users/{id}/account")
+	@ApiOperation(value = "Get accounts of a user",
+			notes = "Provide user id to get details of the bank accounts associated with him/her")
+	public List<UserAccounts> findAccountsByUserId(@PathVariable Integer id) throws Exception {
 		return userService.findAccountsByUserId(id);
 	}
 }
