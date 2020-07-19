@@ -1,0 +1,16 @@
+2020-07-17 01:12:03,203 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h28s36ms).
+2020-07-17 01:17:53,041 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m18s927ms).
+2020-07-17 01:48:54,165 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m956ms).
+2020-07-17 03:45:07,134 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h56m12s969ms).
+2020-07-17 11:30:21,537 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7h44m42s825ms).
+2020-07-17 12:17:54,852 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m1s48ms).
+2020-07-17 13:31:52,299 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h13m57s447ms).
+2020-07-17 16:51:03,361 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3h9m10s980ms).
+<<<<<<< HEAD
+2020-07-17 18:24:33,452 INFO aman.project.springbootstarter.user.UserService [main] Retrieving list of all users
+=======
+2020-07-17 18:24:27,769 INFO aman.project.springbootstarter.user.UserService [main] Retrieving list of all users
+2020-07-17 18:25:29,261 INFO aman.project.springbootstarter.user.UserService [main] Retrieving list of all users
+2020-07-17 18:25:44,061 INFO aman.project.springbootstarter.user.UserService [main] Retrieving list of all users
+>>>>>>> e9d10e6e491a7532dda5355174483d7f82f77d67
+2020-07-17 18:29:55,032 INFO aman.project.springbootstarter.user.UserService [main] Retrieving list of all users

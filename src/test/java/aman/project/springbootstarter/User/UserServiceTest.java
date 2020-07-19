@@ -1,5 +1,6 @@
 package aman.project.springbootstarter.User;
 
+import aman.project.springbootstarter.user.UserHelper;
 import aman.project.springbootstarter.user.UserRepository;
 import aman.project.springbootstarter.user.UserService;
 import aman.project.springbootstarter.user.model.IdentityType;
@@ -19,6 +20,9 @@ public class UserServiceTest {
 
 	@Mock
 	UserRepository userRepository;
+
+	@Mock
+	UserHelper userHelper;
 
 	@InjectMocks
 	UserService userService = new UserService();
