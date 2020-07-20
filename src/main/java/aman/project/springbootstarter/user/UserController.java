@@ -1,6 +1,5 @@
 package aman.project.springbootstarter.user;
 import java.util.List;
-import java.util.NoSuchElementException;
 
 import aman.project.springbootstarter.user.model.UserAccounts;
 import aman.project.springbootstarter.user.model.UserRequest;

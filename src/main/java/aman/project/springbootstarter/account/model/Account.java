@@ -3,7 +3,6 @@ import aman.project.springbootstarter.transaction.model.Transaction;
 import aman.project.springbootstarter.user.model.User;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

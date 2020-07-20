@@ -1,6 +1,5 @@
 package aman.project.springbootstarter.account;
 import aman.project.springbootstarter.account.model.Account;
-import aman.project.springbootstarter.transaction.model.Transaction;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

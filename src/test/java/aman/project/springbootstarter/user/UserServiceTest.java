@@ -1,4 +1,4 @@
-package aman.project.springbootstarter.User;
+package aman.project.springbootstarter.user;
 
 import aman.project.springbootstarter.user.UserHelper;
 import aman.project.springbootstarter.user.UserRepository;

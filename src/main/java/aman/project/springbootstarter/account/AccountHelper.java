@@ -1,7 +1,7 @@
 package aman.project.springbootstarter.account;
+import aman.project.springbootstarter.account.model.AccountResponse;
 import aman.project.springbootstarter.account.model.Account;
 import aman.project.springbootstarter.account.model.AccountRequest;
-import aman.project.springbootstarter.account.model.AccountResponse;
 import org.springframework.stereotype.Component;
 
 @Component

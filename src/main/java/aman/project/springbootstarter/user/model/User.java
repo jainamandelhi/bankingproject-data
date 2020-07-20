@@ -1,7 +1,6 @@
 package aman.project.springbootstarter.user.model;
 
 import aman.project.springbootstarter.account.model.Account;
-import aman.project.springbootstarter.transaction.model.TransactionType;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

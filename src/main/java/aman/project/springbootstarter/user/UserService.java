@@ -1,8 +1,8 @@
 package aman.project.springbootstarter.user;
 
+import aman.project.springbootstarter.user.model.User;
 import aman.project.springbootstarter.account.AccountRepository;
 import aman.project.springbootstarter.account.model.Account;
-import aman.project.springbootstarter.user.model.User;
 import aman.project.springbootstarter.user.model.UserAccounts;
 import aman.project.springbootstarter.user.model.UserRequest;
 import aman.project.springbootstarter.user.model.UserResponse;

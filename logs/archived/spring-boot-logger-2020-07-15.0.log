@@ -61,13 +61,13 @@
 2020-07-15 21:43:17,414 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
 2020-07-15 21:43:17,415 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
 2020-07-15 21:43:17,441 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 25 ms
-2020-07-15 21:43:17,562 INFO aman.project.springbootstarter.user.UserService [http-nio-8080-exec-1] Retrieving list of all users
-2020-07-15 21:43:18,020 INFO aman.project.springbootstarter.user.UserService [http-nio-8080-exec-1] List retrieved
-2020-07-15 21:43:18,021 INFO aman.project.springbootstarter.user.UserService [http-nio-8080-exec-1] Total no of users are 4
+2020-07-15 21:43:17,562 INFO aman.project.springbootstarters.user.UserService [http-nio-8080-exec-1] Retrieving list of all users
+2020-07-15 21:43:18,020 INFO aman.project.springbootstarters.user.UserService [http-nio-8080-exec-1] List retrieved
+2020-07-15 21:43:18,021 INFO aman.project.springbootstarters.user.UserService [http-nio-8080-exec-1] Total no of users are 4
 2020-07-15 21:43:40,756 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-2] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.Exception: Invalid mobile no] with root cause
 java.lang.Exception: Invalid mobile no
-	at aman.project.springbootstarter.user.UserService.addUser(UserService.java:70)
-	at aman.project.springbootstarter.user.UserController.addUser(UserController.java:49)
+	at aman.project.springbootstarters.user.UserService.addUser(UserService.java:70)
+	at aman.project.springbootstarters.user.UserController.addUser(UserController.java:49)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -118,10 +118,10 @@ java.lang.Exception: Invalid mobile no
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
-2020-07-15 22:16:46,954 INFO aman.project.springbootstarter.account.AccountService [http-nio-8080-exec-3] Retrieving list of all accounts
-2020-07-15 22:17:37,084 INFO aman.project.springbootstarter.account.AccountService [http-nio-8080-exec-4] Generating statement
-2020-07-15 22:17:37,108 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-4] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.InvalidDataAccessApiUsageException: Parameter value [2] did not match expected type [aman.project.springbootstarter.account.model.Account (n/a)]; nested exception is java.lang.IllegalArgumentException: Parameter value [2] did not match expected type [aman.project.springbootstarter.account.model.Account (n/a)]] with root cause
-java.lang.IllegalArgumentException: Parameter value [2] did not match expected type [aman.project.springbootstarter.account.model.Account (n/a)]
+2020-07-15 22:16:46,954 INFO aman.project.springbootstarters.account.AccountService [http-nio-8080-exec-3] Retrieving list of all accounts
+2020-07-15 22:17:37,084 INFO aman.project.springbootstarters.account.AccountService [http-nio-8080-exec-4] Generating statement
+2020-07-15 22:17:37,108 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-4] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.InvalidDataAccessApiUsageException: Parameter value [2] did not match expected type [aman.project.springbootstarters.account.model.Account (n/a)]; nested exception is java.lang.IllegalArgumentException: Parameter value [2] did not match expected type [aman.project.springbootstarters.account.model.Account (n/a)]] with root cause
+java.lang.IllegalArgumentException: Parameter value [2] did not match expected type [aman.project.springbootstarters.account.model.Account (n/a)]
 	at org.hibernate.query.spi.QueryParameterBindingValidator.validate(QueryParameterBindingValidator.java:54)
 	at org.hibernate.query.spi.QueryParameterBindingValidator.validate(QueryParameterBindingValidator.java:27)
 	at org.hibernate.query.internal.QueryParameterBindingImpl.validate(QueryParameterBindingImpl.java:90)
@@ -161,8 +161,8 @@ java.lang.IllegalArgumentException: Parameter value [2] did not match expected t
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
 	at com.sun.proxy.$Proxy119.findBySenderAccountOrReceiverAccount(Unknown Source)
-	at aman.project.springbootstarter.account.AccountService.findStatementByAccountId(AccountService.java:99)
-	at aman.project.springbootstarter.account.AccountController.findStatementByAccountId(AccountController.java:57)
+	at aman.project.springbootstarters.account.AccountService.findStatementByAccountId(AccountService.java:99)
+	at aman.project.springbootstarters.account.AccountController.findStatementByAccountId(AccountController.java:57)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -213,8 +213,8 @@ java.lang.IllegalArgumentException: Parameter value [2] did not match expected t
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
-2020-07-15 22:18:01,223 INFO aman.project.springbootstarter.transaction.TransactionService [http-nio-8080-exec-5] Retrieving list of all transactions
-2020-07-15 22:20:26,491 INFO aman.project.springbootstarter.transaction.TransactionService [http-nio-8080-exec-7] Transaction in process
+2020-07-15 22:18:01,223 INFO aman.project.springbootstarters.transaction.TransactionService [http-nio-8080-exec-5] Retrieving list of all transactions
+2020-07-15 22:20:26,491 INFO aman.project.springbootstarters.transaction.TransactionService [http-nio-8080-exec-7] Transaction in process
 2020-07-15 22:20:26,498 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-7] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.InvalidDataAccessApiUsageException: The given id must not be null!; nested exception is java.lang.IllegalArgumentException: The given id must not be null!] with root cause
 java.lang.IllegalArgumentException: The given id must not be null!
 	at org.springframework.util.Assert.notNull(Assert.java:198)
@@ -243,8 +243,8 @@ java.lang.IllegalArgumentException: The given id must not be null!
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
 	at com.sun.proxy.$Proxy117.findById(Unknown Source)
-	at aman.project.springbootstarter.transaction.TransactionService.addTransaction(TransactionService.java:82)
-	at aman.project.springbootstarter.transaction.TransactionService$$FastClassBySpringCGLIB$$e572dccf.invoke(<generated>)
+	at aman.project.springbootstarters.transaction.TransactionService.addTransaction(TransactionService.java:82)
+	at aman.project.springbootstarters.transaction.TransactionService$$FastClassBySpringCGLIB$$e572dccf.invoke(<generated>)
 	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
@@ -254,8 +254,8 @@ java.lang.IllegalArgumentException: The given id must not be null!
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
-	at aman.project.springbootstarter.transaction.TransactionService$$EnhancerBySpringCGLIB$$82aa3a29.addTransaction(<generated>)
-	at aman.project.springbootstarter.transaction.TransactionController.addTransaction(TransactionController.java:50)
+	at aman.project.springbootstarters.transaction.TransactionService$$EnhancerBySpringCGLIB$$82aa3a29.addTransaction(<generated>)
+	at aman.project.springbootstarters.transaction.TransactionController.addTransaction(TransactionController.java:50)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -341,7 +341,7 @@ java.lang.IllegalArgumentException: The given id must not be null!
 2020-07-15 22:26:14,618 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
 2020-07-15 22:26:14,620 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
 2020-07-15 22:26:14,636 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 15 ms
-2020-07-15 22:26:14,942 INFO aman.project.springbootstarter.transaction.TransactionService [http-nio-8080-exec-1] Transaction in process
+2020-07-15 22:26:14,942 INFO aman.project.springbootstarters.transaction.TransactionService [http-nio-8080-exec-1] Transaction in process
 2020-07-15 22:26:15,002 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.InvalidDataAccessApiUsageException: The given id must not be null!; nested exception is java.lang.IllegalArgumentException: The given id must not be null!] with root cause
 java.lang.IllegalArgumentException: The given id must not be null!
 	at org.springframework.util.Assert.notNull(Assert.java:198)
@@ -370,8 +370,8 @@ java.lang.IllegalArgumentException: The given id must not be null!
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
 	at com.sun.proxy.$Proxy117.findById(Unknown Source)
-	at aman.project.springbootstarter.transaction.TransactionService.addTransaction(TransactionService.java:82)
-	at aman.project.springbootstarter.transaction.TransactionService$$FastClassBySpringCGLIB$$e572dccf.invoke(<generated>)
+	at aman.project.springbootstarters.transaction.TransactionService.addTransaction(TransactionService.java:82)
+	at aman.project.springbootstarters.transaction.TransactionService$$FastClassBySpringCGLIB$$e572dccf.invoke(<generated>)
 	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
@@ -381,8 +381,8 @@ java.lang.IllegalArgumentException: The given id must not be null!
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
-	at aman.project.springbootstarter.transaction.TransactionService$$EnhancerBySpringCGLIB$$b9de0b18.addTransaction(<generated>)
-	at aman.project.springbootstarter.transaction.TransactionController.addTransaction(TransactionController.java:50)
+	at aman.project.springbootstarters.transaction.TransactionService$$EnhancerBySpringCGLIB$$b9de0b18.addTransaction(<generated>)
+	at aman.project.springbootstarters.transaction.TransactionController.addTransaction(TransactionController.java:50)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -468,7 +468,7 @@ java.lang.IllegalArgumentException: The given id must not be null!
 2020-07-15 22:28:57,829 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
 2020-07-15 22:28:57,857 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
 2020-07-15 22:28:57,874 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 13 ms
-2020-07-15 22:28:58,102 INFO aman.project.springbootstarter.transaction.TransactionService [http-nio-8080-exec-1] Transaction in process
+2020-07-15 22:28:58,102 INFO aman.project.springbootstarters.transaction.TransactionService [http-nio-8080-exec-1] Transaction in process
 2020-07-15 22:28:58,121 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.InvalidDataAccessApiUsageException: The given id must not be null!; nested exception is java.lang.IllegalArgumentException: The given id must not be null!] with root cause
 java.lang.IllegalArgumentException: The given id must not be null!
 	at org.springframework.util.Assert.notNull(Assert.java:198)
@@ -497,8 +497,8 @@ java.lang.IllegalArgumentException: The given id must not be null!
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
 	at com.sun.proxy.$Proxy117.findById(Unknown Source)
-	at aman.project.springbootstarter.transaction.TransactionService.addTransaction(TransactionService.java:82)
-	at aman.project.springbootstarter.transaction.TransactionService$$FastClassBySpringCGLIB$$e572dccf.invoke(<generated>)
+	at aman.project.springbootstarters.transaction.TransactionService.addTransaction(TransactionService.java:82)
+	at aman.project.springbootstarters.transaction.TransactionService$$FastClassBySpringCGLIB$$e572dccf.invoke(<generated>)
 	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
@@ -508,8 +508,8 @@ java.lang.IllegalArgumentException: The given id must not be null!
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
-	at aman.project.springbootstarter.transaction.TransactionService$$EnhancerBySpringCGLIB$$9e323d78.addTransaction(<generated>)
-	at aman.project.springbootstarter.transaction.TransactionController.addTransaction(TransactionController.java:50)
+	at aman.project.springbootstarters.transaction.TransactionService$$EnhancerBySpringCGLIB$$9e323d78.addTransaction(<generated>)
+	at aman.project.springbootstarters.transaction.TransactionController.addTransaction(TransactionController.java:50)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -595,7 +595,7 @@ java.lang.IllegalArgumentException: The given id must not be null!
 2020-07-15 22:29:34,875 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
 2020-07-15 22:29:34,875 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
 2020-07-15 22:29:34,886 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 10 ms
-2020-07-15 22:29:35,228 INFO aman.project.springbootstarter.transaction.TransactionService [http-nio-8080-exec-1] Transaction in process
+2020-07-15 22:29:35,228 INFO aman.project.springbootstarters.transaction.TransactionService [http-nio-8080-exec-1] Transaction in process
 2020-07-15 22:29:35,285 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.InvalidDataAccessApiUsageException: The given id must not be null!; nested exception is java.lang.IllegalArgumentException: The given id must not be null!] with root cause
 java.lang.IllegalArgumentException: The given id must not be null!
 	at org.springframework.util.Assert.notNull(Assert.java:198)
@@ -624,8 +624,8 @@ java.lang.IllegalArgumentException: The given id must not be null!
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
 	at com.sun.proxy.$Proxy117.findById(Unknown Source)
-	at aman.project.springbootstarter.transaction.TransactionService.addTransaction(TransactionService.java:82)
-	at aman.project.springbootstarter.transaction.TransactionService$$FastClassBySpringCGLIB$$e572dccf.invoke(<generated>)
+	at aman.project.springbootstarters.transaction.TransactionService.addTransaction(TransactionService.java:82)
+	at aman.project.springbootstarters.transaction.TransactionService$$FastClassBySpringCGLIB$$e572dccf.invoke(<generated>)
 	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
@@ -635,8 +635,8 @@ java.lang.IllegalArgumentException: The given id must not be null!
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
-	at aman.project.springbootstarter.transaction.TransactionService$$EnhancerBySpringCGLIB$$ae9ed9f7.addTransaction(<generated>)
-	at aman.project.springbootstarter.transaction.TransactionController.addTransaction(TransactionController.java:50)
+	at aman.project.springbootstarters.transaction.TransactionService$$EnhancerBySpringCGLIB$$ae9ed9f7.addTransaction(<generated>)
+	at aman.project.springbootstarters.transaction.TransactionController.addTransaction(TransactionController.java:50)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -687,8 +687,8 @@ java.lang.IllegalArgumentException: The given id must not be null!
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
-2020-07-15 22:31:08,719 INFO aman.project.springbootstarter.account.AccountService [http-nio-8080-exec-2] Retrieving list of all accounts
-2020-07-15 22:31:44,764 INFO aman.project.springbootstarter.transaction.TransactionService [http-nio-8080-exec-3] Transaction in process
+2020-07-15 22:31:08,719 INFO aman.project.springbootstarters.account.AccountService [http-nio-8080-exec-2] Retrieving list of all accounts
+2020-07-15 22:31:44,764 INFO aman.project.springbootstarters.transaction.TransactionService [http-nio-8080-exec-3] Transaction in process
 2020-07-15 22:33:26,893 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m812ms).
 2020-07-15 22:33:26,901 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-3] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.InvalidDataAccessApiUsageException: The given id must not be null!; nested exception is java.lang.IllegalArgumentException: The given id must not be null!] with root cause
 java.lang.IllegalArgumentException: The given id must not be null!
@@ -718,8 +718,8 @@ java.lang.IllegalArgumentException: The given id must not be null!
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
 	at com.sun.proxy.$Proxy117.findById(Unknown Source)
-	at aman.project.springbootstarter.transaction.TransactionService.addTransaction(TransactionService.java:82)
-	at aman.project.springbootstarter.transaction.TransactionService$$FastClassBySpringCGLIB$$e572dccf.invoke(<generated>)
+	at aman.project.springbootstarters.transaction.TransactionService.addTransaction(TransactionService.java:82)
+	at aman.project.springbootstarters.transaction.TransactionService$$FastClassBySpringCGLIB$$e572dccf.invoke(<generated>)
 	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
@@ -729,8 +729,8 @@ java.lang.IllegalArgumentException: The given id must not be null!
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
-	at aman.project.springbootstarter.transaction.TransactionService$$EnhancerBySpringCGLIB$$ae9ed9f7.addTransaction(<generated>)
-	at aman.project.springbootstarter.transaction.TransactionController.addTransaction(TransactionController.java:50)
+	at aman.project.springbootstarters.transaction.TransactionService$$EnhancerBySpringCGLIB$$ae9ed9f7.addTransaction(<generated>)
+	at aman.project.springbootstarters.transaction.TransactionController.addTransaction(TransactionController.java:50)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -816,7 +816,7 @@ java.lang.IllegalArgumentException: The given id must not be null!
 2020-07-15 22:33:46,637 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
 2020-07-15 22:33:46,638 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
 2020-07-15 22:33:46,646 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 8 ms
-2020-07-15 22:33:46,864 INFO aman.project.springbootstarter.transaction.TransactionService [http-nio-8080-exec-1] Transaction in process
+2020-07-15 22:33:46,864 INFO aman.project.springbootstarters.transaction.TransactionService [http-nio-8080-exec-1] Transaction in process
 2020-07-15 22:35:07,267 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m30s441ms).
 2020-07-15 22:35:07,309 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.InvalidDataAccessApiUsageException: The given id must not be null!; nested exception is java.lang.IllegalArgumentException: The given id must not be null!] with root cause
 java.lang.IllegalArgumentException: The given id must not be null!
@@ -846,8 +846,8 @@ java.lang.IllegalArgumentException: The given id must not be null!
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
 	at com.sun.proxy.$Proxy117.findById(Unknown Source)
-	at aman.project.springbootstarter.transaction.TransactionService.addTransaction(TransactionService.java:81)
-	at aman.project.springbootstarter.transaction.TransactionService$$FastClassBySpringCGLIB$$e572dccf.invoke(<generated>)
+	at aman.project.springbootstarters.transaction.TransactionService.addTransaction(TransactionService.java:81)
+	at aman.project.springbootstarters.transaction.TransactionService$$FastClassBySpringCGLIB$$e572dccf.invoke(<generated>)
 	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
@@ -857,8 +857,8 @@ java.lang.IllegalArgumentException: The given id must not be null!
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
-	at aman.project.springbootstarter.transaction.TransactionService$$EnhancerBySpringCGLIB$$effc7ee1.addTransaction(<generated>)
-	at aman.project.springbootstarter.transaction.TransactionController.addTransaction(TransactionController.java:50)
+	at aman.project.springbootstarters.transaction.TransactionService$$EnhancerBySpringCGLIB$$effc7ee1.addTransaction(<generated>)
+	at aman.project.springbootstarters.transaction.TransactionController.addTransaction(TransactionController.java:50)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -944,7 +944,7 @@ java.lang.IllegalArgumentException: The given id must not be null!
 2020-07-15 22:36:00,152 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
 2020-07-15 22:36:00,153 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
 2020-07-15 22:36:00,173 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 18 ms
-2020-07-15 22:36:00,414 INFO aman.project.springbootstarter.transaction.TransactionService [http-nio-8080-exec-1] Transaction in process
+2020-07-15 22:36:00,414 INFO aman.project.springbootstarters.transaction.TransactionService [http-nio-8080-exec-1] Transaction in process
 2020-07-15 22:37:25,752 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m38s859ms).
 2020-07-15 22:37:25,789 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.InvalidDataAccessApiUsageException: The given id must not be null!; nested exception is java.lang.IllegalArgumentException: The given id must not be null!] with root cause
 java.lang.IllegalArgumentException: The given id must not be null!
@@ -974,8 +974,8 @@ java.lang.IllegalArgumentException: The given id must not be null!
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
 	at com.sun.proxy.$Proxy117.findById(Unknown Source)
-	at aman.project.springbootstarter.transaction.TransactionService.addTransaction(TransactionService.java:81)
-	at aman.project.springbootstarter.transaction.TransactionService$$FastClassBySpringCGLIB$$e572dccf.invoke(<generated>)
+	at aman.project.springbootstarters.transaction.TransactionService.addTransaction(TransactionService.java:81)
+	at aman.project.springbootstarters.transaction.TransactionService$$FastClassBySpringCGLIB$$e572dccf.invoke(<generated>)
 	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769)
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
@@ -985,8 +985,8 @@ java.lang.IllegalArgumentException: The given id must not be null!
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689)
-	at aman.project.springbootstarter.transaction.TransactionService$$EnhancerBySpringCGLIB$$93865357.addTransaction(<generated>)
-	at aman.project.springbootstarter.transaction.TransactionController.addTransaction(TransactionController.java:50)
+	at aman.project.springbootstarters.transaction.TransactionService$$EnhancerBySpringCGLIB$$93865357.addTransaction(<generated>)
+	at aman.project.springbootstarters.transaction.TransactionController.addTransaction(TransactionController.java:50)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1072,9 +1072,9 @@ java.lang.IllegalArgumentException: The given id must not be null!
 2020-07-15 22:37:43,798 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
 2020-07-15 22:37:43,798 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
 2020-07-15 22:37:43,811 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 13 ms
-2020-07-15 22:37:44,033 INFO aman.project.springbootstarter.transaction.TransactionService [http-nio-8080-exec-1] Transaction in process
-2020-07-15 22:37:44,210 INFO aman.project.springbootstarter.transaction.TransactionService [http-nio-8080-exec-1] Transaction successful
-2020-07-15 22:37:58,568 INFO aman.project.springbootstarter.transaction.TransactionService [http-nio-8080-exec-2] Retrieving list of all transactions
+2020-07-15 22:37:44,033 INFO aman.project.springbootstarters.transaction.TransactionService [http-nio-8080-exec-1] Transaction in process
+2020-07-15 22:37:44,210 INFO aman.project.springbootstarters.transaction.TransactionService [http-nio-8080-exec-1] Transaction successful
+2020-07-15 22:37:58,568 INFO aman.project.springbootstarters.transaction.TransactionService [http-nio-8080-exec-2] Retrieving list of all transactions
 2020-07-15 22:39:28,655 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
 2020-07-15 22:39:28,663 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
 2020-07-15 22:39:28,666 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
@@ -1110,7 +1110,7 @@ java.lang.IllegalArgumentException: The given id must not be null!
 2020-07-15 22:39:51,293 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
 2020-07-15 22:39:51,293 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
 2020-07-15 22:39:51,310 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 17 ms
-2020-07-15 22:39:51,568 INFO aman.project.springbootstarter.transaction.TransactionService [http-nio-8080-exec-1] Transaction in process
-2020-07-15 22:39:51,741 INFO aman.project.springbootstarter.transaction.TransactionService [http-nio-8080-exec-1] Transaction successful
-2020-07-15 22:39:59,811 INFO aman.project.springbootstarter.account.AccountService [http-nio-8080-exec-2] Retrieving list of all accounts
+2020-07-15 22:39:51,568 INFO aman.project.springbootstarters.transaction.TransactionService [http-nio-8080-exec-1] Transaction in process
+2020-07-15 22:39:51,741 INFO aman.project.springbootstarters.transaction.TransactionService [http-nio-8080-exec-1] Transaction successful
+2020-07-15 22:39:59,811 INFO aman.project.springbootstarters.account.AccountService [http-nio-8080-exec-2] Retrieving list of all accounts
 2020-07-15 23:30:05,707 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=38m56s913ms).

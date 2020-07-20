@@ -16,9 +16,9 @@
 2020-07-18 15:50:54,013 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m1s350ms).
 2020-07-18 16:31:31,296 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=40m7s238ms).
 2020-07-18 17:29:23,156 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m21s412ms).
-2020-07-18 17:48:37,871 INFO aman.project.springbootstarter.user.UserService [main] Retrieving list of all users
-2020-07-18 17:48:37,878 INFO aman.project.springbootstarter.user.UserService [main] List retrieved
-2020-07-18 17:48:37,878 INFO aman.project.springbootstarter.user.UserService [main] Total no of users are 2
+2020-07-18 17:48:37,871 INFO aman.project.springbootstarters.user.UserService [main] Retrieving list of all users
+2020-07-18 17:48:37,878 INFO aman.project.springbootstarters.user.UserService [main] List retrieved
+2020-07-18 17:48:37,878 INFO aman.project.springbootstarters.user.UserService [main] Total no of users are 2
 2020-07-18 18:16:23,366 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m29s903ms).
 2020-07-18 18:53:43,549 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=36m49s42ms).
 2020-07-18 19:36:09,508 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=41m55s971ms).
